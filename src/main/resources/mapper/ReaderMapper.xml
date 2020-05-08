@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tzh.mapper.ReaderMapper">
+
+
+    <select id="query" resultType="com.tzh.entity.Reader">
+        select * from reader;
+    </select>
+
+    <select id="getReaderData" resultType="com.tzh.entity.Reader" parameterType="java.lang.Integer">
+        select * from reader where id = #{id};
+    </select>
+
+    <update id="update" parameterType="com.tzh.entity.Reader">
+        update reader set reader = #{reader} where id = #{id};
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from reader where id = #{id}
+    </delete>
+
+    <insert id="add" parameterType="com.tzh.entity.Reader">
+        insert into reader(reader) values(#{reader});
+    </insert>
+
+</mapper>
